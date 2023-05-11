@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/GiampieroFC/db-tarot-v1/server"
 )
@@ -21,7 +22,9 @@ func main() {
 
 	// fmt.Println(string(bytes))
 
-	server.ToServe("3030")
+	port := os.Getenv("PORT")
+
+	server.ToServe(port)
 
 	// fmt.Println(cards)
 }
