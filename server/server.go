@@ -71,6 +71,8 @@ func getAll(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("db.getAll() main: %v", err)
 	}
 
+	w.Header().Set("Content-Type", "application/json")
+
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
 	// fmt.Fprintf(w, string(bytes))
@@ -86,6 +88,8 @@ func getMenor(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("db.GetMenor() main: %v", err)
 	}
 
+	w.Header().Set("Content-Type", "application/json")
+
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
 	// fmt.Fprintf(w, string(bytes))
@@ -100,6 +104,8 @@ func getMayor(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatalf("db.GetMayor() main: %v", err)
 	}
+
+	w.Header().Set("Content-Type", "application/json")
 
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
@@ -124,6 +130,8 @@ func getByNumber(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatalf("db.GetByName(r.URL.Query().Get(name)): %v", err)
 	}
+
+	w.Header().Set("Content-Type", "application/json")
 
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
@@ -150,6 +158,8 @@ func getRandom(w http.ResponseWriter, r *http.Request) {
 		log.Fatalf("db.GetByName(r.URL.Query().Get(name)): %v", err)
 	}
 
+	w.Header().Set("Content-Type", "application/json")
+
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
 
@@ -174,6 +184,8 @@ func getByPalo(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatalf("db.GetByName(r.URL.Query().Get(name)): %v", err)
 	}
+
+	w.Header().Set("Content-Type", "application/json")
 
 	bytes, _ := json.Marshal(cards)
 	w.Write(bytes)
